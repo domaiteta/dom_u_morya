@@ -1,0 +1,46 @@
+# ==========================================
+# Django Specific Files
+# ==========================================
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static_cdn/
+
+# ==========================================
+# Python Environments & Bytecode
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+ENV/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+
+# ==========================================
+# Secrets and Environment Variables
+# ==========================================
+.env
+.flaskenv
+secrets.json
+
+# ==========================================
+# IDEs and Text Editors
+# ==========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
