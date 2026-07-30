@@ -1,13 +1,12 @@
-{% load thumbnail %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Дом у моря</title>
-</head>
-<body>
-    <h1>Список домов</h1>
+{% extends 'base.html' %}
 
+{% block title %}
+    Дом у моря
+{% endblock title%}
+
+{% block content %}
+    {% load thumbnail %}
+    <h1>Список домов</h1>
     {% for house in houses %}
         <div style="border: 1px solid black; margin-bottom: 15px; padding-bottom: 10px;">
             <h2><a href="{% url 'house_detail' house.id %}">{{ house.name }}</a></h2>
@@ -20,5 +19,5 @@
             {% endthumbnail %}
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
+
