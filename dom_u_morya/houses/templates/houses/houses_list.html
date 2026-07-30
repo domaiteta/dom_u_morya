@@ -10,9 +10,10 @@
 
     {% for house in houses %}
         <div style="border: 1px solid black; margin-bottom: 15px; padding-bottom: 10px;">
-            <h2>{{ house.name }}</h2>
+            <h2><a href="{% url 'house_detail' house.id %}">{{ house.name }}</a></h2>
             <p>{{ house.price }}</p>
             <div>{{ house.description }}</div>
+            <a href="{{ house.get_absolute_url }}">Подробнее</a>
 
             {% thumbnail house.photo "350x200" crop="center" as im %}
                 <img src="{{ im.url }}" alt="">

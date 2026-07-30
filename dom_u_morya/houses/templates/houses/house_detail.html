@@ -1,0 +1,18 @@
+{% load thumbnail %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ house.name }}</title>
+</head>
+<body>
+    <h6><a href="{% url 'houses_list' %}">home</a></h6>
+    <h1>{{ house.name }}</h1>
+    <div>{{ house.price }}</div>
+    <div>{{ house_description }}</div>
+
+    {% thumbnail house.photo "650x400" croup="center" as im %}
+        <img src="{{ im.url}}" alt="">
+    {% endthumbnail %}
+</body>
+</html>

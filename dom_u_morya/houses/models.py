@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class House(models.Model):
     name = models.CharField(max_length=50, verbose_name='Название')
@@ -14,3 +16,6 @@ class House(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    def get_absolute_url(self):
+        return reverse('house_detail', args=(self.pk,))

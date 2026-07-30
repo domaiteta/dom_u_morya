@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from houses.models import House
+from django.shortcuts import render, get_object_or_404
+from .models import House
 
 def houses_list(request):
     houses = House.objects.all()
@@ -8,3 +8,12 @@ def houses_list(request):
         "houses": houses
     }
     return render(request, 'houses/houses_list.html', context=context)
+
+
+def house_detail(request, house_id):
+    house = get_object_or_404(House, pk=house_id)
+
+    context = {
+        "house": house
+    }
+    return render(request, 'houses/house_detail.html', context=context)
