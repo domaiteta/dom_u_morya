@@ -14,4 +14,11 @@
     {% thumbnail house.photo "650x400" croup="center" as im %}
         <img src="{{ im.url}}" alt="">
     {% endthumbnail %}
+
+    <h2>Заявка</h2>
+    <form method="post" action="{{ house.get_absolute_url }}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить</button>
+    </form>
 {% endblock content %}

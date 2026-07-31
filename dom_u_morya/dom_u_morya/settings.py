@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'houses.apps.HousesConfig',
+    'orders.apps.OrdersConfig',
 
     'sorl.thumbnail'
 ]
